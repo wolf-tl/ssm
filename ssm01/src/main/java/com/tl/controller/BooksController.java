@@ -48,7 +48,10 @@ public class BooksController {
     @RequestMapping("/updateBook")
     public String updateBook(Books books){
         booksService.updateBook(books);
-        return "redirect:/books/allbooks";
+        //标准：return "redirect:/books/allbooks"
+        //return "allbooks"直接转到/books/allbooks
+        //return "allBooks"自动帮我们查询所有
+        return "allBooks";
     }
     //删除书籍
     @RequestMapping("/del")
